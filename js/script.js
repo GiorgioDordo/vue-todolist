@@ -11,9 +11,10 @@ createApp({
                 {'text': 'Studiare', 'done': false},
                 {'text': 'Pulire auto', 'done': false},
                 {'text': 'Andare a correre', 'done': true}
-            ]
+            ]  
         }
     },
+
     methods: {
         // ** adding a new object to the array
         addNewTask(item) { 
@@ -29,6 +30,10 @@ createApp({
 
         deleteTodoItem(todoItemIndex) {
             this.todoList.splice(todoItemIndex, 1);
+        },
+
+        deleteItem(todoItemIndex) {
+            this.todoList.splice(todoItemIndex, this.todoList.length);
         }
     }
 
