@@ -4,13 +4,15 @@ createApp({
     data() {
         return {
             todoList: [
-                'fare la spesa',
-                'pulire casa',
-                'fare jogging',
-                'studiare',
-                'pulire auto',
-                'andare a correre'
+                {'text': 'Fare la spesa', 'done': false},
+                {'text': 'Pulire casa', 'done': false},
+                {'text': 'Fare jogging', 'done': true},
+                {'text': 'Studiare', 'done': false},
+                {'text': 'Pulire auto', 'done': false},
+                {'text': 'Andare a correre', 'done': true}
             ]
         }
-    }
+    },
+    
+
 }).mount('#app')
