@@ -11,13 +11,10 @@
     <div class="container m-auto" id="app">
         <div class="">
             <ul class="list-group m-auto">
-                <li class="list-group-item disabled" aria-disabled="true">fare la spesa</li>
-                <li class="list-group-item">pulire casa</li>
-                <li class="list-group-item">fare jogging</li>
-                <li class="list-group-item">studiare</li>
-                <li class="list-group-item">pulire auto</li>
-                <li class="list-group-item">andare a correre</li>   
-
+                <li class="list-group-item" v-for="(todoItem, index) in todoList">
+                    <!-- ** here goes the todo list created with js ** -->
+                    {{ todoItem }}
+                </li>
               </ul>
         </div>
     </div>
