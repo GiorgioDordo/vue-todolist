@@ -1,9 +1,14 @@
 ul {
-    max-width: 50%;
+    width: 50%;
+    min-width: 200px;
 }
 
 li {
     position: relative;
+}
+
+.check-box:hover {
+    cursor: pointer;
 }
 
 .fa-xmark {
@@ -19,3 +24,6 @@ li {
     font-size: 30px;
 }
 
+.form-add-list {
+    width: 50%;
+}

@@ -9,16 +9,21 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container m-auto" id="app">
-        <div>
-            <h1 class="text-center">TODO LIST</h1>
-            <ul class="list-group m-auto">
+    <div class="container mt-5" id="app">
+        <div class="d-flex align-items-center flex-column">
+            <h1 class="text-center mb-4">TODO LIST</h1>
+            <ul class="list-group">
                 <li class="list-group-item d-flex" v-for="(todoItem, index) in todoList">
                     <span :class="{'text-decoration-line-through text-success': todoItem.done}" >{{ todoItem.text }}</span>
-                    <input class="ms-2" type="checkbox" v-model="todoItem.done">
+                    <input class="check-box ms-2" type="checkbox" v-model="todoItem.done">
                     <i class="fa-solid fa-xmark pt-1 ps-2" @click="deleteTodoItem(index)"></i>
                 </li>
               </ul>
+        </div>
+        <div class="form-add-list d-flex flex-column m-auto mt-4">
+            <label class="text-center h6" for="add-list">Add to list</label>
+            <input class="mb-1" type="text" id="add-list" v-model="newTodoItem" @keyup.enter="addNewTask(newTodoItem)" placeholder="portare fuori il cane"> <!-- ** adding a new item to the list with enter* -->
+            <button type="button" class="btn btn-primary" @click="addNewTask(newTodoItem)">Add to list</button> <!-- ** adding a new item to the list with a click** -->
         </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

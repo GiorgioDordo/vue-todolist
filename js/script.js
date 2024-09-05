@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            newTodoItem: '',
             todoList: [
                 {'text': 'Fare la spesa', 'done': false},
                 {'text': 'Pulire casa', 'done': false},
@@ -14,6 +15,18 @@ createApp({
         }
     },
     methods: {
+        // ** adding a new object to the array
+        addNewTask(item) { 
+            if (item.length >= 3) {
+                this.todoList.push({'text': item, 'done': false});
+                this.clearTodoInput();
+            }
+        },
+
+        clearTodoInput() {
+            this.newTodoItem = '';
+        },
+
         deleteTodoItem(todoItemIndex) {
             this.todoList.splice(todoItemIndex, 1);
         }
